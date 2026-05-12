@@ -1,18 +1,16 @@
-import MOCK_PRODUCTS from "../mockdata/mock_products";
+// Base URL de la FakeStore API
+const API_URL = "https://fakestoreapi.com";
 
+// Trae todos los productos desde la API
 export const getProducts = async () => {
-  // TODO ESTUDIANTE:
-  // Reemplaza este retorno local por FakeStore API.
-  // Ejemplo esperado: GET https://fakestoreapi.com/products
-  return [...MOCK_PRODUCTS].sort((a, b) => Number(a.id) - Number(b.id));
+  const response = await fetch(`${API_URL}/products`);
+  const data = await response.json();
+  return data.sort((a, b) => Number(a.id) - Number(b.id));
 };
 
+// Trae un producto específico por su ID
 export const getProductById = async (id) => {
-  // TODO ESTUDIANTE:
-  // Reemplaza esta busqueda local por FakeStore API.
-  // Ejemplo esperado: GET https://fakestoreapi.com/products/{id}
-  const product = MOCK_PRODUCTS.find(
-    (item) => Number(item.id) === Number(id),
-  );
-  return product ?? null;
+  const response = await fetch(`${API_URL}/products/${id}`);
+  const data = await response.json();
+  return data ?? null;
 };

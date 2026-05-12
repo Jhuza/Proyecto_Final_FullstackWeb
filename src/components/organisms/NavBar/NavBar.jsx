@@ -41,8 +41,8 @@ export default function NavBar() {
             to="/" 
             className="flex items-center space-x-2 text-2xl font-bold hover:opacity-80 transition-opacity"
           >
-            <span className="bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 bg-clip-text text-transparent">
-              MyStore
+            <span className="bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent tracking-widest uppercase">
+              JJH Store
             </span>
           </Link>
 
